@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Availability Tracker</title>
+</head>
+<body>
+
+    <h1>Team Availability Tracker</h1>
+
+    {% for user in users %}
+
+        <h3>{{ user[1] }}</h3>
+
+        {% if user[2] == 1 %}
+            <p style="color:green;">Available</p>
+        {% else %}
+            <p style="color:red;">Not Available</p>
+        {% endif %}
+
+        <a href="/toggle/{{ user[0] }}">
+            <button>Toggle Availability</button>
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
